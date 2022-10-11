@@ -1,0 +1,71 @@
+#container{
+    width: 80%;
+    margin-left: 13%;
+    margin-right: 5%;
+    margin-top: 7%;
+    margin-bottom: 5%;
+    border: solid;
+    border-color: chocolate;
+    border-width: 1px;
+    border-radius: 4%;
+    background-color: black;
+    color:chocolate;
+    padding-left: 1%;
+
+
+}
+#imgcont{
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: bisque;
+    overflow: hidden;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    border-radius: 0.5%;
+   
+    
+    
+}
+#locan{
+    width: 250px;
+    height: 300px;
+    padding: 1%;
+    border:solid;
+    border-width: 00.5%;
+    border-color: chocolate;
+    border-radius: 5%;
+    background-color: black;
+    margin-left: 0.5%;
+    margin-top: 00.5%;
+}
+#insala{
+    background-color: rgb(39, 30, 30);
+    border: solid;
+    border-color: chocolate;
+    border-width: 1px;
+    border-radius: 5px;
+    height: 3%;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+
+
+
+}
+h3{
+    color: rgb(211, 141, 12);
+    text-shadow: chocolate;
+    padding-left: 1%;
+}
+
+
+
+
+
+
+
+.heading-title-prima{
+margin-top: 5%;
+}
