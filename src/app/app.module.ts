@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { NavTopComponent } from './nav-top/nav-top.component';
 import { NavLateraleComponent } from './nav-laterale/nav-laterale.component';
 import { ContainerComponent } from './container/container.component';
+import { LoginComponent } from './login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavTopComponent,
     NavLateraleComponent,
-    ContainerComponent
+    ContainerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

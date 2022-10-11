@@ -1,0 +1,14 @@
+<form #mioform="ngForm" (ngSubmit)="invio(mioform)">
+    <label for="nome">Nome</label>
+   <input type="text" id="Nomeid" #NomeForm name="nome" ngModel placeholder="Inserisci nome" required >
+  <br> <label for="cognome">Cognome</label>
+   <input type="text" id="Cognomeid" #CognomeForm name="cognome" ngModel placeholder="Inserisci Cognome" required>
+  <br> <label for="Email">Email</label>
+   <input type="email" id="Emailid" #EmailForm  name="email" ngModel placeholder="Inserisci Email" required>
+   <br><label for="Telefono">Data di Nascita</label>
+   <input type="date" id="nascitaid" #nascitaForm name="data di nascita" ngModel placeholder="data">
+   <br><label for="password">password</label>
+   <input type="text" id="passwordid" #passwordForm name="password"  ngModel placeholder="password" required>
+   <br><button type="submit" [disabled]="!mioform.form.valid"> Invia</button>
+
+</form>

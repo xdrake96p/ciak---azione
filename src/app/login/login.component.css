@@ -1,0 +1,45 @@
+form{
+    margin-left: 30%;
+    margin-top: 2%;
+    border:solid;
+    border-width: 4px;
+    background-color: black;
+    color:chocolate;
+    border-radius: 60px;
+    padding: 1%;
+    width: 600px;
+    }
+    label{
+        margin-left: 30%;
+        margin-top: 10%;
+        margin-bottom: 5%;
+        padding-top: 3%;
+    }
+    #Nomeid{
+    margin-left: 7%;
+    margin-bottom: 2%;
+    }
+    #Cognomeid{
+        margin-left: 3.4%;
+        margin-bottom: 2%;
+        }
+        #Emailid{
+            margin-left: 7%;
+            margin-bottom: 2%;
+            }
+            #nascitaid{
+                margin-left: 4%;
+                margin-bottom: 2%;
+                }
+                #passwordid{
+                    margin-left: 2%;
+                    margin-bottom: 2%;
+                    }
+    button{
+        margin-left: 45%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        background-color: rgb(22, 16, 16);
+        color: chocolate;
+        width: 20%;
+    }
