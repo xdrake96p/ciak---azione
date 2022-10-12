@@ -8,6 +8,11 @@ import { NavLateraleComponent } from './nav-laterale/nav-laterale.component';
 import { ContainerComponent } from './container/container.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AdminComponent } from './admin/admin.component';
+import { FilmComponent } from './film/film.component';
+import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
+import { AddfilmComponent } from './addfilm/addfilm.component';
+import { CouponComponent } from './coupon/coupon.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +20,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavTopComponent,
     NavLateraleComponent,
     ContainerComponent,
-    LoginComponent
+    LoginComponent,
+    AdminComponent,
+    FilmComponent,
+    PrenotazioniComponent,
+    AddfilmComponent,
+    CouponComponent
   ],
   imports: [
     BrowserModule,

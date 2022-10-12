@@ -1,0 +1,89 @@
+#card{
+    background-color:black;
+    border-color: antiquewhite;
+    border-width: 2px;
+    border-radius: 5%;
+    border:solid;
+    margin-top: 6%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 1%;
+    color: chocolate;
+    width: 80%;
+    height: 40%;
+}
+#locan{
+    width: 250px;
+    height: 300px;
+    border:solid;
+    border-color: aliceblue;
+    border-radius: 3%;
+    border-width: 1px;
+    margin: 1%;
+    margin-bottom: 3%;
+    align-items: flex-start;
+    margin-right: 1%;
+    
+    
+}
+#datiFilm{
+color: white;
+align-items: flex-end;
+}
+h3{
+    padding-left: 1%;
+    margin-left: 2%;
+}
+table{
+    padding: 1%;
+}
+tr{
+    padding: 1%;
+}
+tbody{
+    padding: 1%;
+    color: white;
+}
+p{
+    margin-left: 1%;
+}
+#title{
+color: chocolate;
+}
+#ticket{
+    width: 60px;
+    height: 60px;
+    padding: 1%;
+}
+#selec{
+    color: rgb(0, 0, 0);
+    font-size: larger;
+    font-weight: 600;
+    margin-left: 2%;
+    border-radius: 5%;
+    border-color: chocolate;
+    border-width: 1px;
+    border:solid;
+}
+#btn{
+    margin-left: 2%;
+    padding: 1%;
+    border-radius: 13%;
+    border:solid;
+    border-width: 3px;
+    border-color: black;
+    background-color: chocolate;
+    color: black;
+    font-weight: 900;
+}
+span{
+    color: chocolate;
+    font-weight: 600;
+}
+#num{
+    width: 10%;
+}
+label{
+    padding-left: 1%;
+    font-weight: 600;
+}
