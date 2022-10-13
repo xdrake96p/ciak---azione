@@ -11,12 +11,13 @@ import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
-  { path: "", component: ContainerComponent },
+  
   { path: "admin", component: AdminComponent },
   { path: "film", component: FilmComponent },
   { path: "addfilm", component: AddfilmComponent },
   { path: "coupon", component: CouponComponent },
   { path: "prenotazioni", component: PrenotazioniComponent}
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
