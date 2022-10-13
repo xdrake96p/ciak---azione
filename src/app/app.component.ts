@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Ciak-Azione';
 
-public show: boolean = true;
+public show: boolean = false;
 
 
 }
