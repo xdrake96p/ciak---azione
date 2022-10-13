@@ -11,7 +11,8 @@ import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
-  
+  { path: "", redirectTo: 'home', pathMatch: 'full'},
+  { path: "home", component: ContainerComponent },
   { path: "admin", component: AdminComponent },
   { path: "film", component: FilmComponent },
   { path: "addfilm", component: AddfilmComponent },
