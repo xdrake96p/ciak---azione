@@ -8,9 +8,11 @@ import { CouponComponent } from './coupon/coupon.component';
 import { FilmComponent } from './film/film.component';
 import { LoginComponent } from './login/login.component';
 import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
+import { RegistratiComponent } from './registrati/registrati.component';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
+  { path: "registrati", component: RegistratiComponent },
   { path: "", redirectTo: 'home', pathMatch: 'full'},
   { path: "home", component: ContainerComponent },
   { path: "admin", component: AdminComponent },

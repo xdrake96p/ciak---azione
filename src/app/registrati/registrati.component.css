@@ -16,7 +16,7 @@ form{
     }
     #testo{
         color:chocolate;
-        margin-left:45%;
+        margin-left:40%;
         margin-bottom: 2%;
     }
     span{
@@ -29,7 +29,7 @@ form{
     
     label{
         margin-left: 20%;
-        margin-right: 5%;
+        margin-right: 6%;
         margin-top: 10%;
         margin-bottom: 5%;
         padding-top: 4%;
@@ -61,7 +61,7 @@ form{
                     width: 30%;
                     }
     button{
-        margin-left: 38%;
+        margin-left: 38.5%;
         margin-top: 1%;
         margin-bottom: 1%;
         background-color: rgb(22, 16, 16);
@@ -71,7 +71,7 @@ form{
     a{
         text-decoration: none;
         color: chocolate;
-        margin-left: 38%;
+        margin-left: 39%;
         margin-bottom: 2%;
         margin-top: 4%;
     }
