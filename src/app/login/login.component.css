@@ -21,6 +21,7 @@ form{
     }
     span{
         color:white;
+        margin-left: 1%;
     }
     #imglogo{
         width: 100px;
@@ -74,5 +75,6 @@ form{
         margin-left: 38%;
         margin-bottom: 2%;
         margin-top: 4%;
+       
     }
     

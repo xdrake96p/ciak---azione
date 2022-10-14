@@ -16,6 +16,7 @@ import { CouponComponent } from './coupon/coupon.component';
 import { RegistratiComponent } from './registrati/registrati.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { ContattiComponent } from './contatti/contatti.component';
+import { ProfiloComponent } from './profilo/profilo.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ContattiComponent } from './contatti/contatti.component';
     CouponComponent,
     RegistratiComponent,
     CarrelloComponent,
-    ContattiComponent
+    ContattiComponent,
+    ProfiloComponent
   ],
   imports: [
     BrowserModule,
