@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: "", redirectTo: 'home', pathMatch: 'full'},
   { path: "home", component: ContainerComponent },
   { path: "admin", component: AdminComponent },
-  { path: "film", component: FilmComponent },
+  { path: "film/:id", component: FilmComponent },
   { path: "addfilm", component: AddfilmComponent },
   { path: "coupon", component: CouponComponent },
   { path: "prenotazioni", component: PrenotazioniComponent}

@@ -9,10 +9,12 @@ export class FilmserviceService {
 
   private filmUrlNowPlaying: string;
   private filmUrlUpComing : string;
+  private filmUrlId:string;
 
   constructor(private http: HttpClient) {
     this.filmUrlNowPlaying = 'http://localhost:8080/moviesTypes/now_playing';
     this.filmUrlUpComing= 'http://localhost:8080/moviesTypes/upcoming';
+    this.filmUrlId='http://localhost:8080/movieDetails/'
   }
 
   public filmNowPlaying(): Observable<any> {
@@ -22,5 +24,8 @@ export class FilmserviceService {
     return this.http.get<any>(this.filmUrlUpComing);
   }
 
+  public filmId(numer:any): Observable<any>{
+    return this.http.get<any>(this.filmUrlId+numer);
+  }
 
 }

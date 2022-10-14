@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Movietype } from '../movietype';
 import { FilmserviceService } from '../filmservice.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-container',
@@ -9,8 +10,9 @@ import { FilmserviceService } from '../filmservice.service';
 })
 export class ContainerComponent implements OnInit {
   movieNowPlaying: Movietype | undefined;
+  id!: number;
   movieUpComing: Movietype | undefined;
-  constructor(private filmService: FilmserviceService) { }
+  constructor(private filmService: FilmserviceService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.filmService.filmNowPlaying().subscribe((dato: any) => {
@@ -23,6 +25,8 @@ export class ContainerComponent implements OnInit {
       this.movieUpComing = new Movietype(dato.movieType);
       console.log(this.movieUpComing.getRisultato());
     });
+  
+    
 
   }
 
