@@ -17,6 +17,8 @@ import { RegistratiComponent } from './registrati/registrati.component';
 import { CarrelloComponent } from './carrello/carrello.component';
 import { ContattiComponent } from './contatti/contatti.component';
 import { ProfiloComponent } from './profilo/profilo.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,9 +35,10 @@ import { ProfiloComponent } from './profilo/profilo.component';
     RegistratiComponent,
     CarrelloComponent,
     ContattiComponent,
-    ProfiloComponent
+    ProfiloComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
