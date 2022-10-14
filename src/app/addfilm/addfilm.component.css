@@ -11,6 +11,7 @@
     padding-left: 1%;
     align-content: center;
     align-items: center;
+    padding-bottom: 5%;
 
 }
 #selec{
@@ -25,7 +26,7 @@ label{
 }
 form{
    margin-top: 2%;
-   margin-bottom: 2%;
+   margin-bottom: 5%;
    margin-right: 45%;
    margin-left: 45%;
    font-size: 30px;
@@ -49,4 +50,17 @@ button{
     border:solid;
     border-width: 2px;
     border-radius: 5%;
+}
+a{
+    text-decoration: none;
+    background-color: rgb(31, 28, 28);
+    color: chocolate;
+    border:solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 8%;
+    padding: 2%;
+    margin-bottom: 5%;
+    margin-left: 38.5%;
+    margin-top: 20%;
 }

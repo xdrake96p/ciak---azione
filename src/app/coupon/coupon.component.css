@@ -11,12 +11,14 @@
     padding-left: 1%;
     align-content: center;
     align-items: center;
+    padding-bottom: 8%;
 
 }
 form{
     margin-left: 40%;
     margin-right:45%;
     margin-top:1%;
+    margin-bottom: 5%;
 }
 #img{
     width: 100px;
@@ -36,4 +38,17 @@ form{
 }
 input{
     margin-bottom: 1%;
+}
+a{
+    text-decoration: none;
+    background-color: rgb(31, 28, 28);
+    color: chocolate;
+    border:solid;
+    border-width: 1px;
+    border-color: white;
+    border-radius: 8%;
+    padding: 2%;
+    margin-bottom: 5%;
+    margin-left: 38.5%;
+    margin-top: 20%;
 }

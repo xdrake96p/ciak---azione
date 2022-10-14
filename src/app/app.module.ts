@@ -14,6 +14,8 @@ import { PrenotazioniComponent } from './prenotazioni/prenotazioni.component';
 import { AddfilmComponent } from './addfilm/addfilm.component';
 import { CouponComponent } from './coupon/coupon.component';
 import { RegistratiComponent } from './registrati/registrati.component';
+import { CarrelloComponent } from './carrello/carrello.component';
+import { ContattiComponent } from './contatti/contatti.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RegistratiComponent } from './registrati/registrati.component';
     PrenotazioniComponent,
     AddfilmComponent,
     CouponComponent,
-    RegistratiComponent
+    RegistratiComponent,
+    CarrelloComponent,
+    ContattiComponent
   ],
   imports: [
     BrowserModule,
