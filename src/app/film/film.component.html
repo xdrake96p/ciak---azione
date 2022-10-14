@@ -1,14 +1,11 @@
 <div id="card">
-<table>
+<table >
  <tbody>
     <tr>
-    <td><img src="https://cdn1.thespacecinema.it/-/media/tsc/2022/09/avatar-release-2022/locandina.jpg?h=472" id="locan" alt=""  ></td>
-    <td><h1 id="title"> Avatar</h1>
+    <td><img src={{moviedetail?.getPoster()}} class="locan" alt=""  ></td>
+    <td><h1 id="title"> {{moviedetail?.getOrginaltitle()}}</h1>
     <h1>Descrizione:</h1>
-    <p>Avatar - La via dell'acqua (Avatar: The Way of Water), noto anche come Avatar 2, è un film del 2022 diretto da James Cameron.
-        Prodotto dalla 20th Century Studios, è il sequel del film Avatar del 2009.
-        La pellicola è stata scritta da Cameron e Josh Friedman. I membri del cast sono Sam Worthington, Zoe Saldana, Stephen Lang, Giovanni Ribisi, Joel David Moore, Dileep Rao, CCH Pounder e Matt Gerald che riprendono i ruoli del film originale, e Sigourney Weaver che ritorna in un ruolo diverso; mentre i nuovi membri includono Kate Winslet, Cliff Curtis, Edie Falco, Brendan Cowell, Michelle Yeoh, Jemaine Clement, Oona Chaplin, CJ Jones e Vin Diesel.
-        Il film, realizzato con un budget di 250000000 $,debutterà nelle sale cinematografiche italiane il 14 dicembre 2022.</p>
+    <p>{{moviedetail?.getOverview()}}</p>
     </td>
     </tr>
     <tr>
