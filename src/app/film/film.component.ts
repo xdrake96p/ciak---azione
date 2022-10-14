@@ -17,6 +17,7 @@ export class FilmComponent implements OnInit {
    this.id=this.route.snapshot.paramMap.get('id');
    this.filmService.filmId(this.id).subscribe((dato: any) => { //funziona la recupera delle info ma si deve implementare il model
     console.log(dato);
+    
   });
 
   }
