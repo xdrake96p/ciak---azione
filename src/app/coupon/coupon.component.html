@@ -1,12 +1,11 @@
 <div id="card">
-    <div id="logo"><img src="https://cdn-icons-png.flaticon.com/512/720/720245.png" id="img"></div>
-         <form>
-            <label>Codice Coupon:</label><br>
-            <input type="text"><br><br>
-            <label>valore</label><br>
-            <input type="number"><br>
-            <button id="btn">Invia</button><br>
-         </form>
-         <a routerLink="/admin">Torna al Pannello admin</a>
-        </div>
-           
+   <div id="logo"><img src="https://cdn-icons-png.flaticon.com/512/720/720245.png" id="img"></div>
+   <form [formGroup]="mioform" (ngSubmit)="invio()">
+      <label>Codice Coupon:</label><br>
+      <input type="text" formControlName="codiceCoupon" name="codiceCoupon"><br><br>
+      <label>valore</label><br>
+      <input type="number" min="1" formControlName="valoreCoupon" name="valoreCoupon"><br>
+      <button id="btn">Invia</button><br>
+   </form>
+   <a routerLink="/admin">Torna al Pannello admin</a>
+</div>

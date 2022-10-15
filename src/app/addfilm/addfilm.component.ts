@@ -3,6 +3,8 @@ import { FormControl, FormGroup, NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { FilmserviceService } from '../filmservice.service';
 import { Movietype } from '../movietype';
+import { Sala } from '../sala';
+import { SalaserviceService } from '../salaservice.service';
 
 @Component({
   selector: 'app-addfilm',
@@ -12,7 +14,8 @@ import { Movietype } from '../movietype';
 export class AddfilmComponent implements OnInit {
   mioform: FormGroup;
   movieNowPlaying: Movietype | undefined;
-  constructor(private filmService: FilmserviceService, private activatedRoute: ActivatedRoute) {
+  SaleDisponibili: Sala[];
+  constructor(private filmService: FilmserviceService, private salaService: SalaserviceService) {
     this.mioform = new FormGroup({
       film: new FormControl(),
       sala: new FormControl(),
@@ -20,23 +23,21 @@ export class AddfilmComponent implements OnInit {
       dataFilm: new FormControl()
     }
     );
-
+    this.SaleDisponibili = [];
   }
-/* SelezionaFilm: any;
-  SelezionaSala: any;
-  Prezzo: any;
-  DataFilm: any;*/
   ngOnInit(): void {
     this.filmService.filmNowPlaying().subscribe((dato: any) => {
       console.log(dato.movieType);
       this.movieNowPlaying = new Movietype(dato.movieType);
       console.log(this.movieNowPlaying.getRisultato());
     });
+    this.salaService.getSale().subscribe((dato: any) => {
+      for (let i in dato) {
+        this.SaleDisponibili.push(new Sala(dato[i]));
+      } console.log(JSON.stringify(this.SaleDisponibili));
+    });
   }
   invio() {
-    // alert("Tutto il form: " + JSON.stringify(form.value));
-    /* console.log("Nome inserito è " + form.controls['nome'].value);
-     console.log("Email inserita è " + form.controls['email'].value);*/
     alert("film selezioneato " + this.mioform.value.film + " sala " + this.mioform.value.sala + " prezzo " + this.mioform.value.prezzo + " data " + this.mioform.value.dataFilm);
     console.log(this.mioform);
 

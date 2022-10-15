@@ -9,14 +9,11 @@
     <label for="film">Sala:</label><br>
 
     <select formControlName="sala" name="sala" id="sala" >
-      <option value="prova1">sala1</option>
-      <option value="prova2">sala2</option>
-      <option value="prova3">sala3</option>
-      <option value="prova4">sala4</option>
+      <option *ngFor="let sala of SaleDisponibili"  value={{sala.getId()}}>{{sala.getNomeSala()}}</option>
     </select><br>
     <label for="film">Prezzo:</label><br>
 
-    <input  formControlName="prezzo" type="number"  name="prezzo" id="prezzo" /> 
+    <input  formControlName="prezzo" type="number"  name="prezzo" id="prezzo"  min="1"/> 
     <br>
     <label for="fil">Data Proiezione:</label><br>
     <input   formControlName="dataFilm"type="date"  name="dataFilm" id="dataFilm" ><br>
