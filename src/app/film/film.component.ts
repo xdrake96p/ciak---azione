@@ -16,9 +16,9 @@ export class FilmComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id'); 
+    this.id = this.route.snapshot.paramMap.get('id');
     this.filmService.filmId(this.id).subscribe((dato: any) => { //probabilmente cambierà con una funzione che mi ritorna solo quello che sta nel mio db
-       console.log(dato);
+      console.log(dato);
       this.moviedetail = new Moviedetail(dato);
     });
 
