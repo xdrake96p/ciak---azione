@@ -6,16 +6,11 @@ export class Spettacolo {
 
 
     private dataSpettacolo: Date;
-    private film:Film;
+    private film: Film;
 
-    public getFilm(): Film {
-        return this.film;
+    public getFilm(): any {
+        return this.film.getNomeFilm();
     }
-
-    public setFilm(film: Film): void {
-        this.film = film;
-    }
-
 
   
 
@@ -59,9 +54,9 @@ export class Spettacolo {
     }
 
     constructor(spettacolo: any) {
-        
-        this.dataSpettacolo = spettacolo.dataSpettacolo
-        this.film = spettacolo.film
+      
+        this.dataSpettacolo = spettacolo.dataSpettacolo;
+        this.film = new Film(spettacolo.film);
         this.id_spettacolo = spettacolo.id_spettacolo
         this.orario = spettacolo.orario
         this.prezzoSpettacolo = spettacolo.prezzoSpettacolo

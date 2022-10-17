@@ -9,6 +9,7 @@ export class Film {
     this.idFilmApi =film.idFilmApi;
     this.locandina = film.locandina;
     this.nomeFilm = film.nomeFilm;
+   
   }
    private  descrizione: string;
 
@@ -21,6 +22,9 @@ export class Film {
    private  locandina: string;
 
    private  nomeFilm: string;
+
+
+
 
     public getDescrizione(): string {
         return this.descrizione;
@@ -46,14 +50,7 @@ export class Film {
         this.id = id;
     }
 
-    public getIdFilmApi(): number {
-        return this.idFilmApi;
-    }
-
-    public setIdFilmApi(idFilmApi: number): void {
-        this.idFilmApi = idFilmApi;
-    }
-
+   
     public getLocandina(): string {
         return this.locandina;
     }
@@ -70,5 +67,13 @@ export class Film {
         this.nomeFilm = nomeFilm;
     }
 
+    public getIdFilmApi(): number {
+        return this.idFilmApi;
+    }
 
+    public setIdFilmApi(idFilmApi: number): void {
+        this.idFilmApi = idFilmApi;
+    }
+
+    
 }
