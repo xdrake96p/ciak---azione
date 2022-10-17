@@ -2,10 +2,15 @@
    <div id="logo"><img src="https://cdn-icons-png.flaticon.com/512/720/720245.png" id="img"></div>
    <form [formGroup]="mioform" (ngSubmit)="invio()">
       <label>Codice Coupon:</label><br>
-      <input type="text" formControlName="codiceCoupon" name="codiceCoupon"><br><br>
+      <input type="text" formControlName="codiceCoupon" name="codiceCoupon" id="codiceCoupon"><br><br>
       <label>valore</label><br>
-      <input type="number" min="1" formControlName="valoreCoupon" name="valoreCoupon"><br>
-      <button id="btn">Invia</button><br>
+      <input type="number" min="1" formControlName="valoreCoupon" name="valoreCoupon" id="valoreCoupon"><br>
+      <label>Seleziona il film a cui applicare il Coupon</label><br>
+      <select formControlName="film" name="film" id="film">
+       <option  *ngFor="let film of spettacolo;" value={{film.getId_spettacolo()}}>{{film.getId_spettacolo()}}
+         </option>
+       </select><br> 
+        <button  type="Submit">Invia</button><br>
    </form>
    <a routerLink="/admin">Torna al Pannello admin</a>
 </div>

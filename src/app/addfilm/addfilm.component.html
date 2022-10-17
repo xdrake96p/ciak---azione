@@ -3,22 +3,23 @@
   <form [formGroup]="mioform" (ngSubmit)="invio()">
     <label for="film">film:</label><br>
 
-    <select formControlName="film" name="film" id="film" >
-      <option *ngFor="let film of movieNowPlaying?.getRisultato()"  value={{film.getTitolo()}}>{{film.getTitolo()}}</option>
+    <select formControlName="film" name="film" id="film">
+      <option *ngFor="let film of movieNowPlaying?.getRisultato()" value={{film.aid()}}>{{film.getTitolo()}}
+      </option>
     </select><br>
     <label for="film">Sala:</label><br>
 
-    <select formControlName="sala" name="sala" id="sala" >
-      <option *ngFor="let sala of SaleDisponibili"  value={{sala.getId()}}>{{sala.getNomeSala()}}</option>
+    <select formControlName="sala" name="sala" id="sala">
+      <option *ngFor="let sala of SaleDisponibili" value={{sala.getId()}}>{{sala.getNomeSala()}}</option>
     </select><br>
     <label for="film">Prezzo:</label><br>
-
-    <input  formControlName="prezzo" type="number"  name="prezzo" id="prezzo"  min="1"/> 
+    <input formControlName="prezzo" type="number" name="prezzo" id="prezzo" min="1" />
     <br>
     <label for="fil">Data Proiezione:</label><br>
-    <input   formControlName="dataFilm"type="date"  name="dataFilm" id="dataFilm" ><br>
+    <input formControlName="dataFilm" type="date" name="dataFilm" id="dataFilm" [min]="date"><br>
     <label for="fil">Ora Proiezione:</label><br>
-    <input   formControlName="OraProiezione"type="time"  name="OraProiezione" id="OraProiezione" min="15:00" max="23:59"><br>
+    <input formControlName="OraProiezione" type="time" name="OraProiezione" id="OraProiezione" min="15:00"
+      max="23:59"><br>
     <button type="Submit">conferma</button>
   </form>
   <a routerLink="/admin">Torna al Pannello admin</a>
