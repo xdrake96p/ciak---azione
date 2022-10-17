@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UtenteserviceService {
   private  UtenteUrlProfiloDettagli : string;
+  private  UtenteUrlLoginUtente : string;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -17,7 +18,7 @@ export class UtenteserviceService {
   constructor(private http: HttpClient) {
   //  this.UtenteUrlProfiloDettagli="http://localhost:8080/user/1";//devi togliere 1 altrimenti ti trova solo il primo id del profilo per ora è temporaneo
     this.UtenteUrlProfiloDettagli="http://localhost:8080/registrazione"
-    
+    this.UtenteUrlLoginUtente="http://localhost:8080/login"
    }
 
    public getProfiloInformazioniById(id:any): Observable<any> {
@@ -28,5 +29,7 @@ export class UtenteserviceService {
     return this.http.post<any>(this.UtenteUrlProfiloDettagli,utente,this.httpOptions);
   }
 
-
+  public setInvioLogin(utente:any): Observable<any>{
+    return this.http.post<any>(this.UtenteUrlLoginUtente,utente,this.httpOptions);
+  }
 }

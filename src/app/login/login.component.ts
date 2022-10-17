@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Utente } from '../utente';
 
 @Component({
   selector: 'app-login',
@@ -7,13 +8,23 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-[x: string]: any;
-
-  constructor() { }
+  [x: string]: any;
+  mioform: FormGroup;
+  utenteI:any;
+  constructor() {
+    this.mioform = new FormGroup({
+      email: new FormControl(),
+      password: new FormControl(),
+    });
+  }
 
   ngOnInit(): void {
-    }
-    invio(form:NgForm ) {alert("Tutto il form: " + JSON.stringify(form.value) );}
+  }
+  invio() { 
+    this.utenteI= new Utente(this.mioform);
+    console.log(this.utenteI);
+
+   }
 }
 
 
