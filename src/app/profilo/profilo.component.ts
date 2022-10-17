@@ -17,7 +17,7 @@ export class ProfiloComponent implements OnInit {
     this.id=1;
     this.utenteService.getProfiloInformazioniById(this.id).subscribe((dato: any) => {//si deve fare dinamico per ora torna solo 1 utente con id=1
       console.log(JSON.stringify(dato));
-      this.utente= new Utente(dato);
+      //this.utente= new Utente(dato);
     });
 
   }

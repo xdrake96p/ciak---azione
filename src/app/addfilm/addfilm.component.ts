@@ -20,7 +20,8 @@ export class AddfilmComponent implements OnInit {
       film: new FormControl(),
       sala: new FormControl(),
       prezzo: new FormControl(),
-      dataFilm: new FormControl()
+      dataFilm: new FormControl(),
+      OraProiezione: new FormControl()
     }
     );
     this.SaleDisponibili = [];
@@ -38,7 +39,7 @@ export class AddfilmComponent implements OnInit {
     });
   }
   invio() {
-    alert("film selezioneato " + this.mioform.value.film + " sala " + this.mioform.value.sala + " prezzo " + this.mioform.value.prezzo + " data " + this.mioform.value.dataFilm);
+    alert("film selezioneato " + this.mioform.value.film + " sala " + this.mioform.value.sala + " prezzo " + this.mioform.value.prezzo + " data " + this.mioform.value.dataFilm+" orario spettacolo "+ this.mioform.value.OraProiezione);
     console.log(this.mioform);
 
   }

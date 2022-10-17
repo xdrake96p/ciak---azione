@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Utente } from '../utente';
+import { UtenteserviceService } from '../utenteservice.service';
 
 @Component({
   selector: 'app-registrati',
@@ -8,9 +10,36 @@ import { NgForm } from '@angular/forms';
 })
 export class RegistratiComponent implements OnInit {
   [x: string]: any;
-  constructor() { }
+  mioform: FormGroup;
+  utentec: any;
+  date: any;
+  constructor(private utenteservizio: UtenteserviceService) {
+    this.mioform = new FormGroup({
+      nome: new FormControl(),
+      cognome: new FormControl(),
+      email: new FormControl(),
+      dataDiNascita: new FormControl(),
+      password: new FormControl()
+    });
+    this.date=new Date().toISOString().slice(0,10);
+  }
 
   ngOnInit(): void {
+
   }
-  invio(form:NgForm ) {alert("Tutto il form: " + JSON.stringify(form.value) );}
+  invio() {
+
+    this.utentec = new Utente(this.mioform);
+    console.log(this.utentec);
+    this.utenteservizio.setRegistrazione(this.utentec).subscribe(
+      (response: any) => {
+        console.log(response)
+      },
+      (error: any) => {
+        console.log(error)
+      }
+    )
+
+
+  }
 }

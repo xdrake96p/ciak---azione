@@ -1,28 +1,66 @@
 export class Utente {
-    id_utente : number;
-	  nome : string;
-	  cognome : string;
-	  dataDiNascita : Date;
-	  email : string;
-	
-     constructor(utente: any){
-        this.id_utente=utente.id_utente;
-        this.nome=utente.nome;
-        this.cognome=utente.cognome;
-        this.dataDiNascita=utente.dataDiNascita;
-        this.email=utente.email;
-     }
 
-     public getNome():string{
+ 
+ 
+	private  nome : string;
+	private  cognome : string;
+	private  dataDiNascita : Date;
+	private  email : string;
+    private  password:string 
+    private Tipo_Utente:string;
+
+   constructor( utente:any ) {
+        
+        this.nome = utente.get("nome").value;
+        this.cognome = utente.get("cognome").value;
+        this.dataDiNascita = utente.get("dataDiNascita").value;
+        this.email = utente.get("email").value;
+        this.password = utente.get("password").value;
+        this.Tipo_Utente="Registrato";
+      }
+
+   
+    public getNome(): string {
         return this.nome;
-     }
-     public getCognome():string{
+    }
+
+    public setNome(nome: string): void {
+        this.nome = nome;
+    }
+
+    public getCognome(): string {
         return this.cognome;
-     }
-     public getDatadiNascita():Date{
+    }
+
+    public setCognome(cognome: string): void {
+        this.cognome = cognome;
+    }
+
+    public getDataDiNascita(): Date {
         return this.dataDiNascita;
-     }
-     public getEmail():string{
+    }
+
+    public setDataDiNascita(dataDiNascita: Date): void {
+        this.dataDiNascita = dataDiNascita;
+    }
+
+    public getEmail(): string {
         return this.email;
-     }
+    }
+
+    public setEmail(email: string): void {
+        this.email = email;
+    }
+
+    public getPassword(): string {
+        return this.password;
+    }
+
+    public setPassword(password: string): void {
+        this.password = password;
+    }
+
+
+
 }
+
