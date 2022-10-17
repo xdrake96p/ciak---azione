@@ -7,8 +7,9 @@
       <input type="number" min="1" formControlName="valoreCoupon" name="valoreCoupon" id="valoreCoupon"><br>
       <label>Seleziona il film a cui applicare il Coupon</label><br>
       <select formControlName="film" name="film" id="film">
-       <option  *ngFor="let film of spettacolo;" value={{film.getId_spettacolo()}}>{{film.getId_spettacolo()}}
+   <option  *ngFor="let sp of spettacolo" value={{sp?.getId_spettacolo()}}> {{sp?.getFilm()}} Data:{{sp?.getDataSpettacolo()}} orario: {{sp?.getOrario()}}
          </option>
+        
        </select><br> 
         <button  type="Submit">Invia</button><br>
    </form>
