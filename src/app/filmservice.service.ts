@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +23,12 @@ export class FilmserviceService {
 
 
   constructor(private http: HttpClient) {
-    this.filmUrlNowPlaying = 'http://localhost:8080/moviesTypes/now_playing';
-    this.filmUrlUpComing= 'http://localhost:8080/moviesTypes/upcoming';
-    this.filmUrlId='http://localhost:8080/movieDetails/';
-    this.AddFilmRepository='http://localhost:8080/addFilmRepository';
-    this.AddCouponAFilm='http://localhost:8080/addCoupon';
-    this.UrlSpettacoliDisponinibili='http://localhost:8080/ritornaSpettacolo';
+    this.filmUrlNowPlaying = environment.baseUrl + 'moviesTypes/now_playing';
+    this.filmUrlUpComing= environment.baseUrl + 'moviesTypes/upcoming';
+    this.filmUrlId=environment.baseUrl + 'movieDetails/';
+    this.AddFilmRepository=environment.baseUrl + 'addFilmRepository';
+    this.AddCouponAFilm=environment.baseUrl + 'addCoupon';
+    this.UrlSpettacoliDisponinibili=environment.baseUrl + '/ritornaSpettacolo';
   }
 
 
