@@ -12,26 +12,27 @@ import { SpettacoloInfo } from '../spettacolo-info';
 export class FilmComponent implements OnInit {
   id: any;
   moviedetail: Moviedetail | undefined;
-  dettagliSpettacolo: SpettacoloInfo []  ;
+  dettagliSpettacolo: SpettacoloInfo[] = [];
   constructor(private route: ActivatedRoute, private filmService: FilmserviceService) {
-  this.dettagliSpettacolo=[];
+   
   }
 
   ngOnInit(): void {
+    // this.dettagliSpettacolo = [];
     this.id = this.route.snapshot.paramMap.get('id');
-    this.filmService.ritornaDettagliSpettacolo(this.id).subscribe((dato: any) => { 
-   for(let i in dato){
-     this.dettagliSpettacolo.push(new SpettacoloInfo(dato[i]))
-    }
-   // this.dettagliSpettacolo=dato;
+    this.filmService.ritornaDettagliSpettacolo(this.id).subscribe((dato: any) => {
+      for (let i in dato) {
+        this.dettagliSpettacolo.push(new SpettacoloInfo(dato[i]))
+      }
+      // this.dettagliSpettacolo=dato;
       console.log(this.dettagliSpettacolo);
-    //  this.moviedetail = new Moviedetail(dato);
+      //  this.moviedetail = new Moviedetail(dato);
     });
     this.filmService.filmId(this.id).subscribe((dato: any) => { //probabilmente cambierà con una funzione che mi ritorna solo quello che sta nel mio db
-     // console.log(dato);
+      // console.log(dato);
       this.moviedetail = new Moviedetail(dato);
     });
-    
+
   }
 
 }
