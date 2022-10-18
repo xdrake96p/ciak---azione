@@ -44,14 +44,16 @@ this.spettacolo=[]
     this.coupon = new CouponDaMandareAlServer(this.mioform.value.codiceCoupon, this.mioform.value.valoreCoupon, this.mioform.value.film);
     console.log(this.coupon);
 
-   /* this.filmService.addCoupon(this.coupon).subscribe(
+    this.filmService.addCoupon(this.coupon).subscribe(
       (response: any) => {
         console.log(response)
       },
       (error: any) => {
         console.log(error)
       }
-    )*/
+    )
+
+       
   }
 
 }
