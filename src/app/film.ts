@@ -74,6 +74,7 @@ export class Film {
     public setIdFilmApi(idFilmApi: number): void {
         this.idFilmApi = idFilmApi;
     }
+  
 
     
 }

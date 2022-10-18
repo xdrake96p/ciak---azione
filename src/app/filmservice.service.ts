@@ -14,6 +14,8 @@ export class FilmserviceService {
   private AddFilmRepository:string;
   private AddCouponAFilm:string;
   private UrlSpettacoliDisponinibili:string;
+  private UrlFilmHomeDisponibili:string;
+  private filmUrlDettagliSpettacoli:string;
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -29,6 +31,8 @@ export class FilmserviceService {
     this.AddFilmRepository=environment.baseUrl + 'addFilmRepository';
     this.AddCouponAFilm=environment.baseUrl + 'addCoupon';
     this.UrlSpettacoliDisponinibili=environment.baseUrl + 'ritornaSpettacolo';
+    this.UrlFilmHomeDisponibili=environment.baseUrl+'homefilm'
+    this.filmUrlDettagliSpettacoli=environment.baseUrl+'filminfo/'
   }
 
 
@@ -57,7 +61,13 @@ public ritornaSpettacolo(): Observable<any> {
   return this.http.get<any>(this.UrlSpettacoliDisponinibili);
 }
 
+public ritornaFilmHome():Observable<any>{
+  return this.http.post<any>(this.UrlFilmHomeDisponibili,this.httpOptions);
+}
 
+public ritornaDettagliSpettacolo(numer:any):Observable<any>{
+  return this.http.get<any>(this.filmUrlDettagliSpettacoli+numer);
+}
 }
 
 

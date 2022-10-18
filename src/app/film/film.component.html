@@ -1,41 +1,36 @@
 <div id="card">
-<table >
- <tbody>
-    <tr>
-    <td><img src={{moviedetail?.getPoster()}} class="locan" alt=""  ></td><!--TODO: si deve sistemare la dimensione del post esce troppo grande-->
-    <td><h1 id="title"> {{moviedetail?.getOrginaltitle()}}</h1>
-    <h1>Descrizione:</h1>
-    <p>{{moviedetail?.getOverview()}}</p>
-    </td>
-    </tr>
-    <tr>
-        
-        <td><img src= "https://cdn-icons-png.flaticon.com/512/390/390134.png" id="ticket">Prezzo biglietto <span>5€</span></td>
-        <td><select name="date" id="selec" > 
-            <option value="data1">12/10/2022</option>
-            <option value="data2">13/10/2022</option>
-            <option value="data3">14/10/2022</option>
-            <option value="data4">15/10/2022</option>
-            <option value="data5">16/10/2022</option>
-            <option value="data6">17/10/2022</option>
-        </select>
-        <select name="0rari" id="selec" > 
-            <option value="data1">20:00</option>
-            <option value="data2">22:30</option>
-            <option value="data3">00:30</option>
-            <option value="data4">17:45</option>
-            <option value="data5">15:00</option>
-            <option value="data6">14:00</option>
-        </select>
-        <label>Numero Posti :</label>
-        <input type="number" id="num" min="1">
-        <button id="btn">Vai al Pagamento</button>
-    </td>
-        
-    </tr>
- </tbody>   
-</table>
-    
+    <table>
+        <tbody>
+            <tr>
+                <td><img src={{moviedetail?.getPoster()}} class="locan" alt=""></td>
+                <!--TODO: si deve sistemare la dimensione del post esce troppo grande-->
+                <td>
+                    <h1 id="title"> {{moviedetail?.getOrginaltitle()}}</h1>
+                    <h1>Descrizione:</h1>
+                    <p>{{moviedetail?.getOverview()}}</p>
+                </td>
+            </tr>
+            <tr *ngFor="let dettagli of dettagliSpettacolo">
+
+                <td><img src="https://cdn-icons-png.flaticon.com/512/390/390134.png" id="ticket">Prezzo biglietto
+                    <span>{{dettagli?.getPrezzoSpettacolo()}}</span></td>
+                <td><select name="date" id="selec">
+                        <option value={{dettagli?.getDataSpettacolo()}}> {{dettagli.getDataSpettacolo()}}</option>
+
+                    </select>
+                </td>
+                <td> <select name="0rari" id="selec">
+                        <option value={{dettagli.getOrario()}}>{{dettagli.getOrario()}}</option>
+
+                    </select> </td>
+                <td> <label>Numero Posti :</label>
+                    <input type="number" id="num" min="1">
+                    <button id="btn">Vai al Pagamento</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
 
 </div>
-

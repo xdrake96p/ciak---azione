@@ -5,8 +5,10 @@
         <h3>in sala oggi</h3>
     </div>
     <div id="imgcont">
-        <img *ngFor="let user of movieNowPlaying?.getRisultato()" src={{user.aposter_path()}} id={{user.aid()}} ialt=""
-        [routerLink]="['/film',user.aid()]"  class="locan">
+       <!-- <img *ngFor="let user of movieNowPlaying?.getRisultato()" src={{user.aposter_path()}} id={{user.aid()}} ialt=""
+        [routerLink]="['/film',user.aid()]"  class="locan">-->
+        <img *ngFor="let user of homefilm" src={{user.getLocandina()}} id={{user.getIdFilmApi()}} ialt=""
+        [routerLink]="['/film',user.getIdFilmApi()]"  class="locan">
     </div>
     <div id="insala">
         <h3>in Uscita</h3>
