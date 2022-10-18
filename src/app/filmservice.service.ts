@@ -28,7 +28,7 @@ export class FilmserviceService {
     this.filmUrlId=environment.baseUrl + 'movieDetails/';
     this.AddFilmRepository=environment.baseUrl + 'addFilmRepository';
     this.AddCouponAFilm=environment.baseUrl + 'addCoupon';
-    this.UrlSpettacoliDisponinibili=environment.baseUrl + '/ritornaSpettacolo';
+    this.UrlSpettacoliDisponinibili=environment.baseUrl + 'ritornaSpettacolo';
   }
 
 
