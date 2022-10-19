@@ -13,7 +13,8 @@
             <tr *ngFor="let dettagli of dettagliSpettacolo">
 
                 <td><img src="https://cdn-icons-png.flaticon.com/512/390/390134.png" id="ticket">Prezzo biglietto
-                    <span>{{dettagli?.getPrezzoSpettacolo()}}</span></td>
+                    <span>{{dettagli?.getPrezzoSpettacolo()}}</span>
+                </td>
                 <td><select name="date" id="selec">
                         <option value={{dettagli?.getDataSpettacolo()}}> {{dettagli.getDataSpettacolo()}}</option>
 
