@@ -14,13 +14,19 @@ export class FilmComponent implements OnInit {
   moviedetail: Moviedetail | undefined;
   dettagliSpettacolo: SpettacoloInfo[] = [];
   prezzoScelto: any;
+  orari:any[] =[];
+  orarioScelto:any;
  
   constructor(private route: ActivatedRoute, private filmService: FilmserviceService) {
-   
+
   }
   cambiaPrezzo(event:any) {
-    this.prezzoScelto = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0].getPrezzoSpettacolo();
-    console.log(event);
+    let spettacolo = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0];
+  this.prezzoScelto = spettacolo.getPrezzoSpettacolo();
+  this.orarioScelto = spettacolo.getOrario();
+
+    //this.prezzoScelto = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0].getPrezzoSpettacolo();
+    //console.log(event);
    };
   ngOnInit(): void {
     this.dettagliSpettacolo = [];
@@ -29,17 +35,20 @@ export class FilmComponent implements OnInit {
       for (let i in dato) {
         this.dettagliSpettacolo.push(new SpettacoloInfo(dato[i]))
       }
-     
+
       console.log(this.dettagliSpettacolo);
        this.moviedetail = new Moviedetail(dato);
     });
     console.log(this.dettagliSpettacolo);
-    this.filmService.filmId(this.id).subscribe((dato: any) => { //probabilmente cambierà con una funzione che mi ritorna solo quello che sta nel mio db
+    this.filmService.filmId(this.id).subscribe((dato: any) => { //probabilmente cambierÃ  con una funzione che mi ritorna solo quello che sta nel mio db
       console.log(dato);
       this.moviedetail = new Moviedetail(dato);
     });
-    
+
   }
 
+}
+function cambiaPrezzo(event: Event | undefined) {
+  throw new Error('Function not implemented.');
 }
 

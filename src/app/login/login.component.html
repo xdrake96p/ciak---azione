@@ -7,7 +7,7 @@
   <input type="email" id="Emailid" formControlName="email" name="email"  placeholder="Inserisci Email" required>
   <br><label for="password">password</label>
   <input type="password" id="passwordid" formControlName="password" name="password"  placeholder="password" required>
-  <br><button type="submit"> Invia</button>
+  <br><button type="submit"  [disabled]="mioform.invalid"> Invia</button>
   <h3><a routerLink="/registrati">Registrati <span> Ora</span></a></h3>
 
 </form>

@@ -15,7 +15,7 @@
     <br><label for="password">Password</label>
     <input type="password" id="passwordid" formControlName="password" name="password" placeholder="password" required>
 
-    <br><button type="submit"> Invia</button>
+    <br><button type="submit"  [disabled]="mioform.invalid"> Invia</button>
     <h3><a routerLink="/login">Accedi <span>Ora</span></a></h3>
 
 </form>

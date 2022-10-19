@@ -23,15 +23,14 @@
 
                     </select>
                 </td>
-                <td> <select name="0rari" id="selec">
-                        <option *ngFor="let dettagli of dettagliSpettacolo" value={{dettagli.getOrario()}}>{{dettagli.getOrario()}}</option>
-
-                    </select> </td>
-                <td> <label>Numero Posti :</label>
+                <td> 
+                    <input type="text" id="orario" readonly [(ngModel)]="orarioScelto">
+                     </td>
+                <td> <label>Numero Posti :</label><br>
                     <input type="number" id="num" min="1">
-                    <button id="btn">Vai al Pagamento</button>
-                </td>
 
+                </td>
+                <button id="btn">Vai al Pagamento</button>
             </tr>
         </tbody>
     </table>

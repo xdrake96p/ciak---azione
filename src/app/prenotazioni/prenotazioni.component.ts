@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-prenotazioni',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./prenotazioni.component.css']
 })
 export class PrenotazioniComponent implements OnInit {
-
-  constructor() { }
+  mioform: FormGroup;
+  constructor() {  
+     this.mioform = new FormGroup({
+    nome: new FormControl(null,Validators.required),
+    numerSala: new FormControl(null, Validators.required),
+  });}
 
   ngOnInit(): void {
   }
+  invio(){
 
+  }
 }

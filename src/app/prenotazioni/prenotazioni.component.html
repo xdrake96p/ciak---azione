@@ -1,33 +1,16 @@
 <div id="card">
-    <div id="logo"><img src="https://cdn-icons-png.flaticon.com/512/720/720245.png" id="img"></div>
-    <table>
-        <tr>
-            <td>data prenotazioni</td>
-            <td>numero di prenotazioni</td>
-            <td>orario prenotazioni</td>
-        </tr>
-        <tr>
-            <td>15/04/2022</td>
-            <td>8</td>
-            <td>18:30</td>
-        </tr>
-        <tr>
-            <td>16/04/2022</td>
-            <td>8</td>
-            <td>18:30</td>
-        </tr>
-        <tr>
-            <td>17/04/2022</td>
-            <td>8</td>
-            <td>18:30</td>
-        </tr>
-        <tr>
-            <td>18/04/2022</td>
-            <td>8</td>
-            <td>18:30</td>
-        </tr>
-    </table>
-    <a routerLink="/admin">Torna al Pannello admin</a>
-        </div>
-           
+<form [formGroup]="mioform" (ngSubmit)="invio()">
+    <div id="cimg"><img src="https://cdn-icons-png.flaticon.com/512/1038/1038100.png" id="imglogo"></div>
+    <div id="testo">
+        <h1>Gestione Sala</h1>
+    </div>
+    <label for="nome">Nome Sala</label>
+    <input type="text" id="Nomeid" formControlName="nome" name="nome" placeholder="Inserisci nome sala" required>
+    <br><label for="numerSala">Numero posti Sala</label>
+    <input type="number" id="numerSala" formControlName="numerSala" name="numerSala" placeholder="inserisci numero posti sala" required min="1">
+  
+    <br><button type="submit"  [disabled]="mioform.invalid"> Invia</button>
 
+  
+  </form>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Utente } from '../utente';
 import { UtenteserviceService } from '../utenteservice.service';
 
@@ -15,11 +15,11 @@ export class RegistratiComponent implements OnInit {
   date: any;
   constructor(private utenteservizio: UtenteserviceService) {
     this.mioform = new FormGroup({
-      nome: new FormControl(),
-      cognome: new FormControl(),
-      email: new FormControl(),
-      dataDiNascita: new FormControl(),
-      password: new FormControl(),
+      nome: new FormControl(null,Validators.required),
+      cognome: new FormControl(null,Validators.required),
+      email: new FormControl(null,Validators.email),
+      dataDiNascita: new FormControl(null,Validators.required),
+      password: new FormControl(null,Validators.required),
       tipoUtente: new FormControl()
     });
     this.date=new Date().toISOString().slice(0,10);
@@ -37,6 +37,7 @@ export class RegistratiComponent implements OnInit {
         console.log(response)
       },
       (error: any) => {
+        alert("Errore, dati già esistente")
         console.log(error)
       }
     )

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Utente } from '../utente';
 import { UtenteLoggato } from '../utente-loggato';
@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   utentelog:any;
   constructor(private utenteservice: UtenteserviceService,private router: Router) {
     this.mioform = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl(),
+      email: new FormControl(null,Validators.email),
+      password: new FormControl(null, Validators.required),
     });
   }
 
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['home']);
       },
       (error: any) => {
+        alert("email / password sbagliayo");
         console.log(error)
       }
     )
