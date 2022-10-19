@@ -46,10 +46,14 @@ button{
     background-color: chocolate;
     color: black;
     font-weight: 700;
+    font-size: 40px;
     border-color: aliceblue;
     border:solid;
     border-width: 2px;
-    border-radius: 5%;
+    border-radius: 15%;
+    margin-top:8%;
+    margin-bottom: 7%;
+    
 }
 a{
     text-decoration: none;
