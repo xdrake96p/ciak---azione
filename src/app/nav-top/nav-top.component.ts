@@ -21,7 +21,7 @@ export class NavTopComponent implements OnInit {
   }
   logout():void{
     sessionStorage.removeItem("loggato");
-  this.serviceUtente.isUserLoggedIn.next("0");
+    this.serviceUtente.isUserLoggedIn.next("0");
     sessionStorage.removeItem("idutente");
     this.router.navigate(['login']);
     
