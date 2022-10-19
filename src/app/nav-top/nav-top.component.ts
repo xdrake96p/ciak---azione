@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UtenteserviceService } from '../utenteservice.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UtenteserviceService } from '../utenteservice.service';
 export class NavTopComponent implements OnInit {
   loggatovalie: any;
   
-  constructor(public serviceUtente: UtenteserviceService) { }
+  constructor(public serviceUtente: UtenteserviceService,private router: Router) { }
 
   ngOnInit(): void {
     this.serviceUtente.isUserLoggedIn.subscribe((value: any) => {
@@ -18,5 +19,11 @@ export class NavTopComponent implements OnInit {
     });
     this.loggatovalie = sessionStorage.getItem("loggato");
   }
-
+  logout():void{
+    sessionStorage.removeItem("loggato");
+  this.serviceUtente.isUserLoggedIn.next("0");
+    sessionStorage.removeItem("idutente");
+    this.router.navigate(['login']);
+    
+  }
 }
