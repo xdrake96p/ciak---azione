@@ -17,7 +17,7 @@
                 </td>
                 <td><select (change)="cambiaPrezzo($any($event).target.value)" name="date" id="selec" >
                     <option value=""></option>
-                    <option *ngFor="let dettagli of dettagliSpettacolo" [value]="dettagli?.getDataSpettacolo()">
+                    <option *ngFor="let dettagli of dettagliSpettacolo" [value]="dettagli?.getId_spettacolo()">
                         {{ dettagli?.getDataSpettacolo() }}
                         </option>
 

@@ -14,20 +14,19 @@ export class FilmComponent implements OnInit {
   moviedetail: Moviedetail | undefined;
   dettagliSpettacolo: SpettacoloInfo[] = [];
   prezzoScelto: any;
-  orari:any[] =[];
-  orarioScelto:any;
- 
+  orari: any[] = [];
+  orarioScelto: any;
+
   constructor(private route: ActivatedRoute, private filmService: FilmserviceService) {
 
   }
-  cambiaPrezzo(event:any) {
-    let spettacolo = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0];
-  this.prezzoScelto = spettacolo.getPrezzoSpettacolo();
-  this.orarioScelto = spettacolo.getOrario();
+  cambiaPrezzo(event: any) {
+    let spettacolo = this.dettagliSpettacolo.filter(spettacolo =>
+      spettacolo.getId_spettacolo() == event)[0];
+    this.prezzoScelto = spettacolo.getPrezzoSpettacolo();
+    this.orarioScelto = spettacolo.getOrario();
 
-    //this.prezzoScelto = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0].getPrezzoSpettacolo();
-    //console.log(event);
-   };
+  };
   ngOnInit(): void {
     this.dettagliSpettacolo = [];
     this.id = this.route.snapshot.paramMap.get('id');
@@ -37,7 +36,7 @@ export class FilmComponent implements OnInit {
       }
 
       console.log(this.dettagliSpettacolo);
-       this.moviedetail = new Moviedetail(dato);
+      this.moviedetail = new Moviedetail(dato);
     });
     console.log(this.dettagliSpettacolo);
     this.filmService.filmId(this.id).subscribe((dato: any) => { //probabilmente cambierÃ  con una funzione che mi ritorna solo quello che sta nel mio db
