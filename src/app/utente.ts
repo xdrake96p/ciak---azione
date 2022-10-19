@@ -7,16 +7,25 @@ export class Utente {
 	private  dataDiNascita : Date;
 	private  email : string;
     private  password:string 
-    private Tipo_Utente:string;
+    private tipoUtente:string;
+
+    public getTipoUtente(): string {
+        return this.tipoUtente;
+    }
+
+    public setTipoUtente(tipoUtente: string): void {
+        this.tipoUtente = tipoUtente;
+    }
+
 
    constructor( utente:any ) {
-        
-        this.nome = utente.get("nome").value;
-        this.cognome = utente.get("cognome").value;
-        this.dataDiNascita = utente.get("dataDiNascita").value;
-        this.email = utente.get("email").value;
-        this.password = utente.get("password").value;
-        this.Tipo_Utente="Registrato";
+        console.log("utente cost"+JSON.stringify(utente));
+        this.nome = utente.nome;
+        this.cognome = utente.cognome;
+        this.dataDiNascita = utente.dataDiNascita;
+        this.email = utente.email;
+        this.password = utente.password;
+        this.tipoUtente=utente.tipoUtente;
       }
 
    
