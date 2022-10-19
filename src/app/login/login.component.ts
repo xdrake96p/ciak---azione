@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       (response: any) => {
         
         sessionStorage.setItem("idutente",response.id_utente);
-        sessionStorage.setItem("loggato",'true');
+        sessionStorage.setItem("loggato","1");
         sessionStorage.setItem("tipoutente",response.tipoUtente);
         console.log(response)
       },

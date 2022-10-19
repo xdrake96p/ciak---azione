@@ -9,8 +9,8 @@ export class UtenteserviceService {
   private  UtenteUrlProfiloDettagli : string;
   private  UtenteUrlLoginUtente : string;
   private utenteRegistrazione:string;
-  public isUserLoggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  public TipoUtenteA: BehaviorSubject<string> = new BehaviorSubject<string>("");
+  public isUserLoggedIn: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+ 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
