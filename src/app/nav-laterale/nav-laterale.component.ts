@@ -13,7 +13,7 @@ export class NavLateraleComponent implements OnInit {
   constructor(public serviceUtente: UtenteserviceService) {
 
 
-    this.serviceUtente.isUserLoggedIn.subscribe((value: any) => {
+    this.serviceUtente.isUserLoggedIn.subscribe((value: string) => {
       this.loggatovalie = value;
 
     });

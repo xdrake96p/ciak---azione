@@ -9,7 +9,7 @@ export class UtenteserviceService {
   private  UtenteUrlProfiloDettagli : string;
   private  UtenteUrlLoginUtente : string;
   private utenteRegistrazione:string;
-  public isUserLoggedIn: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public isUserLoggedIn: BehaviorSubject<string> = new BehaviorSubject<string>('0');
  
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,7 +20,7 @@ export class UtenteserviceService {
   
 
   constructor(private http: HttpClient) {
-   this.UtenteUrlProfiloDettagli="http://localhost:8080/user/";//devi togliere 1 altrimenti ti trova solo il primo id del profilo per ora è temporaneo
+   this.UtenteUrlProfiloDettagli="http://localhost:8080/user/";
     this.utenteRegistrazione="http://localhost:8080/registrazione"
     this.UtenteUrlLoginUtente="http://localhost:8080/login"
    }

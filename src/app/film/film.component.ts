@@ -19,10 +19,9 @@ export class FilmComponent implements OnInit {
    
   }
   cambiaPrezzo(event:any) {
-  // this.prezzoScelto = this.dettagliSpettacolo.filter(spettacolo =>
-   //  spettacolo.dataSpettacolo == event).cambiaPrezzo;
+    this.prezzoScelto = this.dettagliSpettacolo.filter(spettacolo => spettacolo.getDataSpettacolo() == event)[0].getPrezzoSpettacolo();
     console.log(event);
-   }
+   };
   ngOnInit(): void {
     this.dettagliSpettacolo = [];
     this.id = this.route.snapshot.paramMap.get('id');
@@ -43,6 +42,4 @@ export class FilmComponent implements OnInit {
   }
 
 }
-function cambiaPrezzo(event: Event | undefined) {
-  throw new Error('Function not implemented.');
-}
+

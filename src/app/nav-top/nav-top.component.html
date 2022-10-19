@@ -28,8 +28,11 @@
                 <i class='bx bx-search'></i>
             </div>
             <!--user-->
-            <a *ngIf="loggatovalie==null"  routerLink="login" class="user">
+            <a *ngIf="!this.loggatovalie"  routerLink="login" class="user">
                 <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="user" class="user-img">
+            </a>
+            <a *ngIf="this.loggatovalie==='1' || this.loggatovalie==='2'"   routerLink="login" class="user"><!-- fare il logout -->
+                LOGOUT
             </a>
             <!--carrello-->
             <img src="https://cdn-icons-png.flaticon.com/512/1170/1170576.png" class="carrello" routerLink="/carrello">

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Utente } from '../utente';
 import { UtenteLoggato } from '../utente-loggato';
 import { UtenteserviceService } from '../utenteservice.service';
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   utente: any;
   utentelog:any;
-  constructor(private utenteservice: UtenteserviceService) {
+  constructor(private utenteservice: UtenteserviceService,private router: Router) {
     this.mioform = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
@@ -32,11 +33,15 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem("idutente",response.id_utente);
         if(response.tipoUtente==='Admin'){
         sessionStorage.setItem("loggato","2");
+        this.utenteservice.isUserLoggedIn.next("2");
         }else{
         sessionStorage.setItem("loggato","1");
+        this.utenteservice.isUserLoggedIn.next("1");
         }
-        //sessionStorage.setItem("tipoutente",response.tipoUtente);
+       
         console.log(response)
+        
+        this.router.navigate(['home']);
       },
       (error: any) => {
         console.log(error)
