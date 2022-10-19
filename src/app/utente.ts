@@ -25,7 +25,11 @@ export class Utente {
         this.dataDiNascita = utente.dataDiNascita;
         this.email = utente.email;
         this.password = utente.password;
+        if(utente.tipoUtente=== null){
+            this.tipoUtente="Registrato";
+        }else{
         this.tipoUtente=utente.tipoUtente;
+        }
       }
 
    

@@ -19,7 +19,8 @@ export class RegistratiComponent implements OnInit {
       cognome: new FormControl(),
       email: new FormControl(),
       dataDiNascita: new FormControl(),
-      password: new FormControl()
+      password: new FormControl(),
+      tipoUtente: new FormControl()
     });
     this.date=new Date().toISOString().slice(0,10);
   }
@@ -29,7 +30,7 @@ export class RegistratiComponent implements OnInit {
   }
   invio() {
 
-    this.utentec = new Utente(this.mioform);
+    this.utentec = new Utente(this.mioform.value);
     console.log(this.utentec);
     this.utenteservizio.setRegistrazione(this.utentec).subscribe(
       (response: any) => {

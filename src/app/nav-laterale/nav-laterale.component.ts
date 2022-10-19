@@ -19,7 +19,7 @@ export class NavLateraleComponent implements OnInit {
     });
  
     this.loggatovalie = sessionStorage.getItem("loggato");
-    this.tipoutente = sessionStorage.getItem("tipoutente")
+   
     console.log(this.loggatovalie);
   }
 
