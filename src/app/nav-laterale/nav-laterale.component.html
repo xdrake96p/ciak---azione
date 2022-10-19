@@ -13,6 +13,7 @@
      <i class='bx bxs-movie-play'></i>
      <span class="nav-link-title">In sala oggi</span>
  </a>
+<<<<<<< HEAD
  <a routerLink="/profilo" class="nav-link">
     <i class='bx bx-user' ></i>
      <span class="nav-link-title">profilo</span>
@@ -24,6 +25,19 @@
  <a routerLink="admin" class="nav-link" >
     <i class='bx bx-cog'></i>
      <span class="nav-link-title">Admin</span>
+=======
+ <a  *ngIf="loggatovalie==='1'" routerLink="/profilo" class="nav-link">
+     <i class='bx bx-user'></i>
+     <span class="nav-link-title">profilo</span>
+ </a>
+ <a routerLink="/contattaci" class="nav-link">
+     <i class='bx bx-user-pin'></i>
+     <span class="nav-link-title">Contattaci</span>
+ </a>
+ <a *ngIf="tipoutente==='2' "routerLink="admin" class="nav-link" >
+     <i class='bx bxl-cog'></i>
+     <span class="nav-link-title">Social</span>
+>>>>>>> 6b2e06ebc9feb2e2a8a49ef734ffe68a45ac1bda
  </a>
  </div>
 

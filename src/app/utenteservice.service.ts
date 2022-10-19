@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,25 +8,29 @@ import { Observable } from 'rxjs';
 export class UtenteserviceService {
   private  UtenteUrlProfiloDettagli : string;
   private  UtenteUrlLoginUtente : string;
+  private utenteRegistrazione:string;
+  public isUserLoggedIn: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+ 
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
       "Access-Control-Allow-Origin": "*",
     } ), 
   };
+  
 
   constructor(private http: HttpClient) {
-  //  this.UtenteUrlProfiloDettagli="http://localhost:8080/user/1";//devi togliere 1 altrimenti ti trova solo il primo id del profilo per ora è temporaneo
-    this.UtenteUrlProfiloDettagli="http://localhost:8080/registrazione"
+   this.UtenteUrlProfiloDettagli="http://localhost:8080/user/";//devi togliere 1 altrimenti ti trova solo il primo id del profilo per ora è temporaneo
+    this.utenteRegistrazione="http://localhost:8080/registrazione"
     this.UtenteUrlLoginUtente="http://localhost:8080/login"
    }
 
    public getProfiloInformazioniById(id:any): Observable<any> {
-    return this.http.get<any>(this.UtenteUrlProfiloDettagli);
+    return this.http.get<any>(this.UtenteUrlProfiloDettagli+id);
   }
 
   public setRegistrazione(utente:any): Observable<any>{
-    return this.http.post<any>(this.UtenteUrlProfiloDettagli,utente,this.httpOptions);
+    return this.http.post<any>(this.utenteRegistrazione,utente,this.httpOptions);
   }
 
   public setInvioLogin(utente:any): Observable<any>{

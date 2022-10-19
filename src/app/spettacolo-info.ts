@@ -8,10 +8,10 @@ export class SpettacoloInfo {
         this.orario = spettacolo.orario
         this.prezzoSpettacolo = spettacolo.prezzoSpettacolo
     }
-    private id_spettacolo: number;
-    private dataSpettacolo: Date;
-    private orario: Time;
-    private prezzoSpettacolo: number;
+     id_spettacolo: number;
+     dataSpettacolo: Date;
+     orario: Time;
+     prezzoSpettacolo: number;
 
     public getId_spettacolo(): number {
         return this.id_spettacolo;
